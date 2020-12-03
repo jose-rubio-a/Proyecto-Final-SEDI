@@ -5,6 +5,9 @@
 #include <iomanip>
 using namespace std;
 
+#include "aldeano.h"
+#include <list>
+
 class Civilizacion
 {
 private:
@@ -12,6 +15,7 @@ private:
     float ubicacionX;
     float ubicacionY;
     int puntuacion;
+    list<Aldeano> aldeanos;
 public:
     Civilizacion();
     Civilizacion(const string &nombre, float ubicacionX, float ubicacionY, int puntuacion);
@@ -25,6 +29,21 @@ public:
     float getUbicacionX();
     float getUbicacionY();
     int getPuntuacion();
+
+    void agregarFinal(const Aldeano &a);
+    void agregarInicio(const Aldeano &a);
+
+    void eliminarNombre(const string &nombre);
+    void eliminarSalud(size_t salud);
+    void eliminarEdad();
+
+    void clasificarNombre();
+    void clasificarEdad();
+    void clasificarSalud();
+
+    void mostrar();
+
+    Aldeano* buscar(const Aldeano &a);
 
    friend ostream& operator<<(ostream &out, const Civilizacion &c){
        out << left;
