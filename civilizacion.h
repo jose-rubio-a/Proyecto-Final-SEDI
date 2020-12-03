@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <fstream>
 using namespace std;
 
 #include "aldeano.h"
@@ -44,6 +45,9 @@ public:
     void mostrar();
 
     Aldeano* buscar(const Aldeano &a);
+
+    void respaldarAldeanos();
+    void recuperarAldeanos();
 
    friend ostream& operator<<(ostream &out, const Civilizacion &c){
        out << left;
