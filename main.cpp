@@ -22,6 +22,8 @@ int main()
         cout << "10) Modificar" << endl;
         cout << "11) Mostrar" << endl;
         cout << "12) Menu Aldeanos" << endl;
+        cout << "13) Respaldar" << endl;
+        cout << "14) Recuperar" << endl;
         cout << " 0) Salir" << endl;
         cout << "Opcion: ";
         getline(cin, op);
@@ -231,6 +233,14 @@ int main()
         else if (op == "12")
         {
             myVG.menuAldeano();
+        }
+        else if (op == "13")
+        {
+            myVG.respaldar();
+        }
+        else if (op == "14")
+        {
+            myVG.recuperar();
         }
         else if (op == "0")
         {
