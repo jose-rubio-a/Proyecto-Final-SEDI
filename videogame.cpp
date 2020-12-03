@@ -2,6 +2,7 @@
 #include <algorithm>
 #include "menualdeano.h"
 
+
 VideoGame::VideoGame() {}
 
 void VideoGame::setNombreUsuario(const string &s)
@@ -140,4 +141,34 @@ void VideoGame::menuAldeano()
 size_t VideoGame::size()
 {
     return civilizaciones.size();
+}
+
+void VideoGame::respaldar(){
+    ofstream archivo("civilizaciones.txt");
+    if(archivo.is_open()){
+        for(size_t i = 0; i < civilizaciones.size(); i++){
+            Civilizacion &c = civilizaciones[i];
+            archivo << c.getNombre() << endl;
+            c.respaldarAldeanos();
+        }
+    }
+    archivo.close();
+}
+
+void VideoGame::recuperar(){
+    ifstream archivo("civilizaciones.txt");
+    if(archivo.is_open()){
+        string temp;
+        while(true){
+            Civilizacion c;
+            getline(archivo,temp);
+            if(archivo.eof()){
+                break;
+            }
+            c.setNombre(temp);
+            c.recuperarAldeanos();
+            agregarFinal(c);
+        }
+    }
+    archivo.close();
 }

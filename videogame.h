@@ -27,6 +27,8 @@ class VideoGame{
         void menuAldeano();
         size_t size();
         void mostrar();
+        void respaldar();
+        void recuperar();
         friend VideoGame& operator<< (VideoGame &vg, Civilizacion &c){
             vg.agregarFinal(c);
             return vg;
