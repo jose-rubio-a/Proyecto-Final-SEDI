@@ -24,6 +24,7 @@ class VideoGame{
         void ordenarPuntuacion();
         void eliminar(const string &v);
         Civilizacion* buscar(const Civilizacion &c);
+        void menuAldeano();
         size_t size();
         void mostrar();
         friend VideoGame& operator<< (VideoGame &vg, Civilizacion &c){
