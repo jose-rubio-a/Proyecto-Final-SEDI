@@ -9,8 +9,7 @@ int main()
     while (true)
     {
         cout << "MENU PRINCIPAL " << endl;
-        cout << "Usuario: " << myVG.getNombreUsuario() << endl
-             << endl;
+        cout << "Usuario: " << myVG.getNombreUsuario() << endl << endl;
         cout << " 1) Nombre Usuario" << endl;
         cout << " 2) Agregar Civilizacion" << endl;
         cout << " 3) Insertar Civilizacion" << endl;
@@ -22,6 +21,7 @@ int main()
         cout << " 9) Buscar" << endl;
         cout << "10) Modificar" << endl;
         cout << "11) Mostrar" << endl;
+        cout << "12) Menu Aldeanos" << endl;
         cout << " 0) Salir" << endl;
         cout << "Opcion: ";
         getline(cin, op);
@@ -139,7 +139,7 @@ int main()
             Civilizacion *ptr = myVG.buscar(c);
             if (ptr == nullptr)
             {
-                cout << "Civilizacion no encontrada" << endl;
+                cout << "Elemento no encontrado" << endl;
             }
             else
             {
@@ -227,6 +227,10 @@ int main()
         else if (op == "11")
         {
             myVG.mostrar();
+        }
+        else if (op == "12")
+        {
+            myVG.menuAldeano();
         }
         else if (op == "0")
         {
